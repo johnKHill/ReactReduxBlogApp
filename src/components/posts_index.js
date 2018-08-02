@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 //Connecting with the connect redux helper 
 import { connect } from 'react-redux';
 // Link is identical to an achor tag in html
+// helps navigate from different pages/components
 import { Link } from 'react-router-dom';
 // importing action creator into this component
 import { fetchPosts } from '../actions';
