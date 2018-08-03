@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-// Library
+// Libraries in react-router-dom for navigation
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // Library
 import promise from 'redux-promise';
