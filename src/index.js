@@ -16,20 +16,23 @@ import PostsShow from './components/posts_show';
 
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
-/*This is for Redux Dev Tool -> fix this later*/
-//const store = createStoreWithMiddleware( reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
+/*This is for Redux Dev Tool -> fix this later*/
+const store = createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+
+// <Provider store={createStoreWithMiddleware(reducers)}>
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
+<Provider store={store}>
     <BrowserRouter>
         <div>
             <Switch>
-               <Route path="/posts/new" component={PostsNew} />
-               <Route path="/posts/:id" component={PostsShow} />
-               <Route path="/" component={PostIndex} /> 
+                <Route path="/posts/new" component={PostsNew} />
+                <Route path="/posts/:id" component={PostsShow} />
+                <Route path="/" component={PostIndex} /> 
             </Switch>
         </div>
     </BrowserRouter>
-  </Provider>
-  , document.querySelector('.container'));
+</Provider>
+, document.querySelector('.container'));
